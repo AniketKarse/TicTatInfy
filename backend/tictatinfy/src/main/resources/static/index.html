@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacInfy</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if(localStorage.getItem("sessionID")==null){
+            console.log("cdcdc")
+            window.location.replace("landing.html");
+        }
+    </script>
+    <script type="module">
+        import { myFunction,checkWin,initializePage,fillUpGrid,updateCell,currPlayerXorO} from './app.js';
+        window.myFunction = myFunction;
+        window.checkWin = checkWin;
+        window.initializePage = initializePage;
+        window.fillUpGrid = fillUpGrid;
+        window.updateCell = updateCell;
+        window.currPlayerXorO = currPlayerXorO;
+    </script>
+    <script type="module">
+        import { createGame,startGame,joinGame } from './landingHandler.js';
+        window.createGame = createGame;
+        window.startGame = startGame;
+        window.joinGame = joinGame;
+    </script>
+    <script type="module">
+        import { fetchData,createSocketChannel,sendData ,sendMessage} from './serviceCall.js';
+        window.fetchData = fetchData;
+        window.createSocketChannel = createSocketChannel;
+        window.sendData = sendData;
+        window.sendMessage = sendMessage;
+    </script>
+</head>
+<body>
+    <!-- Game Title -->
+    <p id="won">TIC TAC INFY</p>
+
+    <!-- Game Grid -->
+    <div class="grid-container">
+        <div class="grid-item" id="demo0" onclick="updateCell(id,currPlayerXorO())"></div>
+        <div class="grid-item" id="demo1" onclick="updateCell(id,currPlayerXorO())"></div>
+        <div class="grid-item" id="demo2" onclick="updateCell(id,currPlayerXorO())"></div>
+        <div class="grid-item" id="demo3" onclick="updateCell(id,currPlayerXorO())"></div>
+        <div class="grid-item" id="demo4" onclick="updateCell(id,currPlayerXorO())"></div>
+        <div class="grid-item" id="demo5" onclick="updateCell(id,currPlayerXorO())"></div>
+        <div class="grid-item" id="demo6" onclick="updateCell(id,currPlayerXorO())"></div>
+        <div class="grid-item" id="demo7" onclick="updateCell(id,currPlayerXorO())"></div>
+        <div class="grid-item" id="demo8" onclick="updateCell(id,currPlayerXorO())"></div>
+    </div>
+</body>
+</html>
